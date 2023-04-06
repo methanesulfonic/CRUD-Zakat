@@ -27,7 +27,8 @@ namespace basic_crud
         //Gunakan koneksi dibawah jika ingin memakai database offline
         //MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
         //Gunakan koneksi dibawah jika ingin memakai database online
-        MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
+        //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
+        MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=0kycfa9jqanz63z0rlt0;password=pscale_pw_OwSoNujBv6UcYU0yIn24b7VyDyUxlRE3exjuHYoR4pI;SslMode=VerifyFull");
 
         public void lihatData()
         {

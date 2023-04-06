@@ -18,8 +18,11 @@ namespace basic_crud
     {
         public Form1()
         {
-            InitializeComponent();
-           
+
+           InitializeComponent();
+           // Application.Run(new login());
+           // this.Close();
+
         }
         //Gunakan koneksi dibawah jika ingin memakai database offline
         //MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
@@ -56,8 +59,18 @@ namespace basic_crud
         {
             lihatData();
             label_waktu.Text = DateTime.Now.ToString
-            ("HH:mm, dddd, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
+            ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
             this.dateTimePicker2.Value = DateTime.Now;
+            Font myfont = new Font("Microsoft Sans Serif", 12.0f);
+            textbox_id.Font = myfont;
+            textbox_nik.Font = myfont;
+            textbox_nama.Font = myfont;
+            textbox_uang.Font = myfont;
+            textbox_total.Font = myfont;
+            textbox_kembalian.Font = myfont;
+            comboBox1.Font = myfont;
+            comboBox2.Font = myfont;
+
         }
 
 
@@ -114,7 +127,7 @@ namespace basic_crud
             }
             catch (Exception c)
             {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: " + c.Message, "Pesan Error");
             }
         }
 
@@ -190,7 +203,7 @@ namespace basic_crud
             }
             catch (Exception c)
             { 
-            MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+            MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
             }
             finally
             {
@@ -225,9 +238,7 @@ namespace basic_crud
                 cmd.CommandText = "SELECT distinct * FROM identitas WHERE tanggal BETWEEN @dari AND @ke;";
                 cmd.Parameters.AddWithValue("@dari", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@ke", dateTimePicker2.Value);
-
-
-
+                                
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -248,7 +259,7 @@ namespace basic_crud
             }
             catch (Exception c)
             {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
             }
         }
 
@@ -311,7 +322,7 @@ namespace basic_crud
             }
             catch (Exception c)
             {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
             }
             finally
             {
@@ -362,7 +373,7 @@ namespace basic_crud
             }
             catch (Exception c)
             {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
             }
             finally
             {
@@ -403,7 +414,7 @@ namespace basic_crud
             }
             catch (Exception c)
             {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
             }
         }
 
@@ -414,9 +425,50 @@ namespace basic_crud
             koneksi.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_nonadmin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Menuju ke Form Non-Administrator");
+                nonadmin z = new nonadmin();
+                this.Hide();
+                z.ShowDialog();
+                this.Close();
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+        }
+
+        private void button_backlogin_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_backlogin_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Kembali ke Form Login");
+                login x = new login();
+                this.Hide();
+                x.ShowDialog();
+                this.Close();
+                koneksi.Close();
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
+            }
+            finally
+            {
+                koneksi.Close();
+            }
         }
     }  
 }

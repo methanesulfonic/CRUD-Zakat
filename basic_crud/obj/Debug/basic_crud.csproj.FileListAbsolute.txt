@@ -4,7 +4,6 @@ C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\D
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Data.dll
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Data.Entity.dll
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Web.dll
-C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csprojResolveAssemblyReference.cache
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Form1.resources
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Properties.Resources.resources
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.GenerateResource.Cache
@@ -28,32 +27,10 @@ C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\D
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\System.Buffers.xml
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\System.Memory.xml
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\basic_crud.exe.config
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\basic_crud.exe
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\basic_crud.pdb
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\Google.Protobuf.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\MySql.Data.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\MySql.Data.Entity.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\MySql.Web.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Buffers.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Memory.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\BouncyCastle.Crypto.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\Google.Protobuf.pdb
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\Google.Protobuf.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\MySql.Data.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Buffers.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Memory.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\obj\Debug\basic_crud.Form1.resources
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\obj\Debug\basic_crud.Properties.Resources.resources
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\obj\Debug\basic_crud.csproj.GenerateResource.Cache
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\obj\Debug\basic_crud.exe
-C:\Users\junbo\Documents\GitHub\CRUD-Zakat\basic_crud\obj\Debug\basic_crud.pdb
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.login.resources
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.nonadmin.resources
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.exe.manifest
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.application
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csprojResolveAssemblyReference.cache
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.exe.manifest
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.application

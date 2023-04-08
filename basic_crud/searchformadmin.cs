@@ -14,9 +14,9 @@ using System.Globalization;
 
 namespace basic_crud
 {
-    public partial class nonadmin : Form
+    public partial class searchformadmin : Form
     {
-        public nonadmin()
+        public searchformadmin()
         {
             InitializeComponent();
         }
@@ -24,8 +24,7 @@ namespace basic_crud
         //Gunakan koneksi dibawah jika ingin memakai database offline
         MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
         //Gunakan koneksi dibawah jika ingin memakai database online
-        //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=XXXmethanesulfonic;user=XXXuep7z49rj1s8hhw1dtoy;password=XXXpscale_pw_wr3Iuqd4NxhA0GY8tytpIMybSYsq10lcvscjx4lM2w6;SslMode=VerifyFull");
-
+        //MySqlConnection koneksi = new MySqlConnection("Server=XXXaws.connect.psdb.cloud;Database=XXXmethanesulfonic;user=XXXuep7z49rj1s8hhw1dtoy;password=XXXpscale_pw_wr3Iuqd4NxhA0GY8tytpIMybSYsq10lcvscjx4lM2w6;SslMode=VerifyFull");
 
         public void lihatData()
         {
@@ -48,7 +47,7 @@ namespace basic_crud
             dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-            
+
         }
 
         private void nonadmin_Load(object sender, EventArgs e)
@@ -70,8 +69,6 @@ namespace basic_crud
                 cmd.Parameters.AddWithValue("@dari", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@ke", dateTimePicker2.Value);
 
-
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -81,6 +78,7 @@ namespace basic_crud
                 dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
+
 
                 dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
 
@@ -157,9 +155,9 @@ namespace basic_crud
 
         }
 
-        
+
         private void button_carikolom_Click_1(object sender, EventArgs e)
-        { 
+        {
             try
             {
                 koneksi.Open();
@@ -167,7 +165,7 @@ namespace basic_crud
                 cmd = koneksi.CreateCommand();
                 cmd.CommandText = "SELECT * FROM identitas WHERE ID LIKE '%" + textbox_id.Text + "%'";
                 cmd.Parameters.AddWithValue("@ID", textbox_id.Text);
-              
+
 
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -227,7 +225,6 @@ namespace basic_crud
                 dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
-
 
                 dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
 
@@ -291,14 +288,15 @@ namespace basic_crud
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button_back_input_Click(object sender, EventArgs e)
         {
             try
             {
-                MessageBox.Show("Menampilkan Credits~!");
-                Credits v = new Credits();
-                v.ShowDialog();
-
+                MessageBox.Show("Kembali ke Form Input");
+                Form1 z = new Form1();
+                this.Hide();
+                z.ShowDialog();
+                this.Close();
                 koneksi.Close();
             }
             catch (Exception c)
@@ -320,6 +318,8 @@ namespace basic_crud
                 cmd = koneksi.CreateCommand();
                 cmd.CommandText = "SELECT * FROM identitas WHERE NAMA LIKE '%" + textbox_nama.Text + "%'";
                 cmd.Parameters.AddWithValue("@NAMA", textbox_nama.Text);
+
+
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -361,6 +361,8 @@ namespace basic_crud
                 cmd.CommandText = "SELECT * FROM identitas WHERE JUMLAH_JIWA LIKE '%" + textbox_jiwa.Text + "%'";
                 cmd.Parameters.AddWithValue("@JUMLAH_JIWA", textbox_jiwa.Text);
 
+
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -370,7 +372,8 @@ namespace basic_crud
                 dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
                 dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
-                
+
+
                 dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
 
                 dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
@@ -391,6 +394,6 @@ namespace basic_crud
             }
         }
     }
-    
+
 }
 

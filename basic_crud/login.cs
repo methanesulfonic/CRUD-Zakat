@@ -23,9 +23,10 @@ namespace basic_crud
             textbox_passw.Text = "";
         }
 
-        //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
-        MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=0kycfa9jqanz63z0rlt0;password=pscale_pw_OwSoNujBv6UcYU0yIn24b7VyDyUxlRE3exjuHYoR4pI;SslMode=VerifyFull");
+        //localhost string
 
+        MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
+        //MySqlConnection koneksi = new MySqlConnection("Server=XXXaws.connect.psdb.cloud;Database=XXXmethanesulfonic;user=XXXuep7z49rj1s8hhw1dtoy;password=XXXpscale_pw_wr3Iuqd4NxhA0GY8tytpIMybSYsq10lcvscjx4lM2w6;SslMode=VerifyFull");
         private void login_Load(object sender, EventArgs e)
         {
            Font myfont = new Font("Microsoft Sans Serif", 15.0f);
@@ -38,10 +39,6 @@ namespace basic_crud
         {
             try
             {
-                MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=0kycfa9jqanz63z0rlt0;password=pscale_pw_OwSoNujBv6UcYU0yIn24b7VyDyUxlRE3exjuHYoR4pI;SslMode=VerifyFull");
-
-                //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
-                // MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
                 MySqlCommand cmd;
 
                 cmd = koneksi.CreateCommand();
@@ -87,6 +84,26 @@ namespace basic_crud
             z.ShowDialog();
             this.Close();
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Menampilkan Credits~!");
+                Credits v = new Credits();
+                v.ShowDialog();
+                
+                koneksi.Close();
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
+            }
+            finally
+            {
+                koneksi.Close();
+            }
         }
     }
 }

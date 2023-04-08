@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,12 +56,6 @@
             this.button_cek = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_waktu = new System.Windows.Forms.Label();
-            this.button_cari = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textbox_id = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,13 +63,21 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button_nonadmin = new System.Windows.Forms.Button();
             this.button_backlogin = new System.Windows.Forms.Button();
+            this.button_buatadmin = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textbox_username = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textbox_pass = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -83,7 +85,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.PaleGreen;
             this.label8.Font = new System.Drawing.Font("Sitka Banner", 30.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(56, 0);
+            this.label8.Location = new System.Drawing.Point(56, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(244, 59);
             this.label8.TabIndex = 26;
@@ -97,7 +99,7 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 96);
+            this.panel1.Size = new System.Drawing.Size(304, 112);
             this.panel1.TabIndex = 27;
             // 
             // panel2
@@ -106,7 +108,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(8, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(32, 96);
+            this.panel2.Size = new System.Drawing.Size(32, 112);
             this.panel2.TabIndex = 36;
             // 
             // pictureBox1
@@ -125,7 +127,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.PaleGreen;
             this.label11.Font = new System.Drawing.Font("Sitka Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(64, 48);
+            this.label11.Location = new System.Drawing.Point(64, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(214, 33);
             this.label11.TabIndex = 37;
@@ -401,15 +403,15 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Location = new System.Drawing.Point(312, 112);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(312, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(760, 416);
             this.dataGridView1.TabIndex = 5;
@@ -422,82 +424,11 @@
             this.label_waktu.AutoSize = true;
             this.label_waktu.BackColor = System.Drawing.Color.Transparent;
             this.label_waktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_waktu.Location = new System.Drawing.Point(16, 32);
+            this.label_waktu.Location = new System.Drawing.Point(16, 40);
             this.label_waktu.Name = "label_waktu";
             this.label_waktu.Size = new System.Drawing.Size(115, 25);
             this.label_waktu.TabIndex = 7;
             this.label_waktu.Text = "label_waktu";
-            // 
-            // button_cari
-            // 
-            this.button_cari.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button_cari.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_cari.FlatAppearance.BorderSize = 0;
-            this.button_cari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_cari.ForeColor = System.Drawing.Color.White;
-            this.button_cari.Location = new System.Drawing.Point(368, 48);
-            this.button_cari.Name = "button_cari";
-            this.button_cari.Size = new System.Drawing.Size(75, 23);
-            this.button_cari.TabIndex = 29;
-            this.button_cari.Text = "Cari";
-            this.button_cari.UseVisualStyleBackColor = false;
-            this.button_cari.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = " HH:mm / dd - MM - yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(64, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
-            this.dateTimePicker1.TabIndex = 30;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = " HH:mm / dd - MM - yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(288, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(156, 20);
-            this.dateTimePicker2.TabIndex = 31;
-            this.dateTimePicker2.Value = new System.DateTime(2023, 4, 2, 23, 30, 0, 0);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 17);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Dari";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(224, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 17);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Sampai";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button_cari);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(320, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(456, 88);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cari Berdasarkan Tanggal";
             // 
             // groupBox2
             // 
@@ -525,7 +456,7 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textbox_total);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(8, 112);
+            this.groupBox2.Location = new System.Drawing.Point(8, 120);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 416);
             this.groupBox2.TabIndex = 34;
@@ -576,7 +507,7 @@
             this.groupBox3.Controls.Add(this.label_waktu);
             this.groupBox3.Location = new System.Drawing.Point(784, 8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 88);
+            this.groupBox3.Size = new System.Drawing.Size(288, 104);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Waktu Saat Ini:";
@@ -588,11 +519,11 @@
             this.button_nonadmin.FlatAppearance.BorderSize = 0;
             this.button_nonadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_nonadmin.ForeColor = System.Drawing.Color.White;
-            this.button_nonadmin.Location = new System.Drawing.Point(752, 536);
+            this.button_nonadmin.Location = new System.Drawing.Point(24, 64);
             this.button_nonadmin.Name = "button_nonadmin";
-            this.button_nonadmin.Size = new System.Drawing.Size(179, 23);
+            this.button_nonadmin.Size = new System.Drawing.Size(168, 23);
             this.button_nonadmin.TabIndex = 38;
-            this.button_nonadmin.Text = "ke Tampilan Non-Administrator";
+            this.button_nonadmin.Text = "Pencarian";
             this.button_nonadmin.UseVisualStyleBackColor = false;
             this.button_nonadmin.Click += new System.EventHandler(this.button_nonadmin_Click);
             // 
@@ -603,13 +534,93 @@
             this.button_backlogin.FlatAppearance.BorderSize = 0;
             this.button_backlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_backlogin.ForeColor = System.Drawing.Color.White;
-            this.button_backlogin.Location = new System.Drawing.Point(944, 536);
+            this.button_backlogin.Location = new System.Drawing.Point(24, 32);
             this.button_backlogin.Name = "button_backlogin";
-            this.button_backlogin.Size = new System.Drawing.Size(123, 23);
+            this.button_backlogin.Size = new System.Drawing.Size(168, 23);
             this.button_backlogin.TabIndex = 39;
-            this.button_backlogin.Text = "Kembali ke Login";
+            this.button_backlogin.Text = "Login Kembali";
             this.button_backlogin.UseVisualStyleBackColor = false;
             this.button_backlogin.Click += new System.EventHandler(this.button_backlogin_Click_1);
+            // 
+            // button_buatadmin
+            // 
+            this.button_buatadmin.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button_buatadmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_buatadmin.FlatAppearance.BorderSize = 0;
+            this.button_buatadmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_buatadmin.ForeColor = System.Drawing.Color.White;
+            this.button_buatadmin.Location = new System.Drawing.Point(152, 72);
+            this.button_buatadmin.Name = "button_buatadmin";
+            this.button_buatadmin.Size = new System.Drawing.Size(75, 23);
+            this.button_buatadmin.TabIndex = 29;
+            this.button_buatadmin.Text = "Simpan";
+            this.button_buatadmin.UseVisualStyleBackColor = false;
+            this.button_buatadmin.Click += new System.EventHandler(this.button_buatadmin_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.textbox_username);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.button_buatadmin);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.textbox_pass);
+            this.groupBox1.Location = new System.Drawing.Point(312, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(240, 104);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buat Akun Administrator Baru";
+            // 
+            // textbox_username
+            // 
+            this.textbox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_username.Location = new System.Drawing.Point(112, 24);
+            this.textbox_username.Multiline = true;
+            this.textbox_username.Name = "textbox_username";
+            this.textbox_username.Size = new System.Drawing.Size(115, 20);
+            this.textbox_username.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 17);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Password";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(16, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 17);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Username";
+            // 
+            // textbox_pass
+            // 
+            this.textbox_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_pass.Location = new System.Drawing.Point(112, 48);
+            this.textbox_pass.Multiline = true;
+            this.textbox_pass.Name = "textbox_pass";
+            this.textbox_pass.Size = new System.Drawing.Size(115, 20);
+            this.textbox_pass.TabIndex = 38;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.button_nonadmin);
+            this.groupBox4.Controls.Add(this.button_backlogin);
+            this.groupBox4.Location = new System.Drawing.Point(560, 8);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(216, 104);
+            this.groupBox4.TabIndex = 41;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Menu Lainnya";
             // 
             // Form1
             // 
@@ -618,9 +629,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1083, 568);
-            this.Controls.Add(this.button_backlogin);
-            this.Controls.Add(this.button_nonadmin);
+            this.ClientSize = new System.Drawing.Size(1083, 545);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.dataGridView1);
@@ -637,12 +647,13 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -671,12 +682,6 @@
         private System.Windows.Forms.Button button_cek;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label_waktu;
-        private System.Windows.Forms.Button button_cari;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textbox_id;
@@ -687,6 +692,13 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button_nonadmin;
         private System.Windows.Forms.Button button_backlogin;
+        private System.Windows.Forms.Button button_buatadmin;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textbox_username;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textbox_pass;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 

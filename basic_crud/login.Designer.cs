@@ -34,11 +34,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textbox_passw = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textbox_passw = new System.Windows.Forms.TextBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,6 @@
             this.textbox_username.Size = new System.Drawing.Size(300, 31);
             this.textbox_username.TabIndex = 0;
             this.textbox_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-          
             // 
             // button_login
             // 
@@ -118,6 +118,21 @@
             this.panel1.Size = new System.Drawing.Size(352, 280);
             this.panel1.TabIndex = 5;
             // 
+            // textbox_passw
+            // 
+            this.textbox_passw.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbox_passw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_passw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textbox_passw.Location = new System.Drawing.Point(24, 152);
+            this.textbox_passw.MaxLength = 12;
+            this.textbox_passw.MinimumSize = new System.Drawing.Size(300, 31);
+            this.textbox_passw.Multiline = true;
+            this.textbox_passw.Name = "textbox_passw";
+            this.textbox_passw.PasswordChar = '●';
+            this.textbox_passw.Size = new System.Drawing.Size(300, 31);
+            this.textbox_passw.TabIndex = 9;
+            this.textbox_passw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -172,20 +187,19 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Copyright @KELOMPOK PBO - 2023";
             // 
-            // textbox_passw
+            // linkLabel2
             // 
-            this.textbox_passw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbox_passw.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_passw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textbox_passw.Location = new System.Drawing.Point(24, 152);
-            this.textbox_passw.MaxLength = 12;
-            this.textbox_passw.MinimumSize = new System.Drawing.Size(300, 31);
-            this.textbox_passw.Multiline = true;
-            this.textbox_passw.Name = "textbox_passw";
-            this.textbox_passw.PasswordChar = '●';
-            this.textbox_passw.Size = new System.Drawing.Size(300, 31);
-            this.textbox_passw.TabIndex = 9;
-            this.textbox_passw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.DarkGreen;
+            this.linkLabel2.Location = new System.Drawing.Point(208, 368);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(46, 15);
+            this.linkLabel2.TabIndex = 10;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Credits";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // login
             // 
@@ -194,6 +208,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(466, 408);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,5 +238,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textbox_passw;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

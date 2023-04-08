@@ -62,7 +62,6 @@
             this.label_waktu = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button_backlogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -392,7 +391,6 @@
             this.button_cari_nama.TabIndex = 37;
             this.button_cari_nama.Text = "Cari";
             this.button_cari_nama.UseVisualStyleBackColor = false;
-            this.button_cari_nama.Click += new System.EventHandler(this.button_cari_nama_Click);
             // 
             // textbox_nama
             // 
@@ -433,7 +431,6 @@
             this.button_cari_jiwa.TabIndex = 37;
             this.button_cari_jiwa.Text = "Cari";
             this.button_cari_jiwa.UseVisualStyleBackColor = false;
-            this.button_cari_jiwa.Click += new System.EventHandler(this.button_cari_jiwa_Click);
             // 
             // textbox_jiwa
             // 
@@ -475,28 +472,13 @@
             this.button_backlogin.FlatAppearance.BorderSize = 0;
             this.button_backlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_backlogin.ForeColor = System.Drawing.Color.White;
-            this.button_backlogin.Location = new System.Drawing.Point(464, 480);
+            this.button_backlogin.Location = new System.Drawing.Point(456, 480);
             this.button_backlogin.Name = "button_backlogin";
             this.button_backlogin.Size = new System.Drawing.Size(123, 24);
             this.button_backlogin.TabIndex = 38;
             this.button_backlogin.Text = "Kembali ke Login";
             this.button_backlogin.UseVisualStyleBackColor = false;
             this.button_backlogin.Click += new System.EventHandler(this.button_backlogin_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(600, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 24);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Credits";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // nonadmin
             // 
@@ -505,7 +487,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1137, 514);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_backlogin);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -578,6 +559,5 @@
         private System.Windows.Forms.Label label_waktu;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button_backlogin;
-        private System.Windows.Forms.Button button1;
     }
 }

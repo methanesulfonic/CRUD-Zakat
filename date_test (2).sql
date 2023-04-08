@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2023 at 03:25 AM
+-- Generation Time: Apr 08, 2023 at 05:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,19 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `ID_LOGIN` int(16) NOT NULL,
   `USERNAME` varchar(12) NOT NULL,
-  `PASSWORD` varchar(12) NOT NULL,
-  `NAMA_PENGGUNA` varchar(50) NOT NULL
+  `PASSWORD` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`ID_LOGIN`, `USERNAME`, `PASSWORD`, `NAMA_PENGGUNA`) VALUES
-(1, 'admin', 'admin', 'Azrul'),
-(2, 'admin2', 'admin2', 'Restu');
+INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
+('admin', 'admin'),
+('admin2', 'admin2'),
+('jihan', 'jihan');
 
 -- --------------------------------------------------------
 
@@ -68,7 +67,8 @@ INSERT INTO `identitas` (`ID`, `NIK`, `NAMA`, `TANGGAL`, `JUMLAH_JIWA`, `KUALITA
 (12127, 90911191, 'Restu', '2023-04-02 19:06:22', 2, 15000, 60000, 250000, 190000),
 (12130, 90912876, 'Azrul', '2023-04-29 09:35:39', 6, 30000, 774000, 800000, 26000),
 (12131, 90912551, 'Jihan', '2023-04-03 09:36:11', 7, 25000, 752500, 800000, 47500),
-(12132, 90912550, 'Ayu Aria', '2023-04-04 10:27:48', 4, 15000, 120000, 500000, 380000);
+(12132, 90912550, 'Ayu Aria', '2023-04-04 10:27:48', 4, 15000, 120000, 500000, 380000),
+(12137, 90912550, 'Ayu Aria3', '2023-04-08 10:51:55', 1, 15000, 30000, 80000, 50000);
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,7 @@ INSERT INTO `jenis` (`jenis`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID_LOGIN`);
+  ADD PRIMARY KEY (`USERNAME`);
 
 --
 -- Indexes for table `identitas`
@@ -113,16 +113,10 @@ ALTER TABLE `identitas`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `ID_LOGIN` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `identitas`
 --
 ALTER TABLE `identitas`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12137;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12138;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

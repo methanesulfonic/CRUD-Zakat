@@ -33,3 +33,5 @@ C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\D
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.application
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.exe.manifest
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.application
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.searchformadmin.resources
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Credits.resources

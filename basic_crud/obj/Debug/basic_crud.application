@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="basic_crud.exe.manifest" size="11336">
+    <dependentAssembly dependencyType="install" codebase="basic_crud.exe.manifest" size="10380">
       <assemblyIdentity name="basic_crud.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/Mj2Xe2y0lnAUqzSGoyUKpMOF1GkvNmNN+LTK1XVEWQ=</dsig:DigestValue>
+        <dsig:DigestValue>MDTI/EHh8SOEkem+KhGrZtHtha+MAZuzzxsNi7dz/VE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

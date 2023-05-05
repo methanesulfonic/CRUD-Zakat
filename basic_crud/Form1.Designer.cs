@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -209,7 +209,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);
             this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -256,27 +255,25 @@
             this.textbox_nama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_nama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_nama.Location = new System.Drawing.Point(168, 104);
-            this.textbox_nama.Multiline = true;
+            this.textbox_nama.MaxLength = 50;
             this.textbox_nama.Name = "textbox_nama";
-            this.textbox_nama.Size = new System.Drawing.Size(100, 24);
+            this.textbox_nama.Size = new System.Drawing.Size(100, 26);
             this.textbox_nama.TabIndex = 6;
-            this.textbox_nama.TextChanged += new System.EventHandler(this.textbox_nama_TextChanged);
             // 
             // textbox_nik
             // 
             this.textbox_nik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_nik.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_nik.Location = new System.Drawing.Point(168, 64);
-            this.textbox_nik.Multiline = true;
+            this.textbox_nik.MaxLength = 16;
             this.textbox_nik.Name = "textbox_nik";
-            this.textbox_nik.Size = new System.Drawing.Size(100, 24);
+            this.textbox_nik.Size = new System.Drawing.Size(100, 26);
             this.textbox_nik.TabIndex = 5;
-            this.textbox_nik.TextChanged += new System.EventHandler(this.textbox_nik_TextChanged_1);
             // 
             // textbox_total
             // 
-            this.textbox_total.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textbox_total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbox_total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textbox_total.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textbox_total.Cursor = System.Windows.Forms.Cursors.Default;
             this.textbox_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_total.Location = new System.Drawing.Point(168, 264);
@@ -304,11 +301,10 @@
             this.textbox_uang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textbox_uang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_uang.Location = new System.Drawing.Point(168, 224);
-            this.textbox_uang.Multiline = true;
+            this.textbox_uang.MaxLength = 9;
             this.textbox_uang.Name = "textbox_uang";
-            this.textbox_uang.Size = new System.Drawing.Size(100, 24);
+            this.textbox_uang.Size = new System.Drawing.Size(100, 26);
             this.textbox_uang.TabIndex = 23;
-            this.textbox_uang.TextChanged += new System.EventHandler(this.textbox_uang_TextChanged);
             // 
             // button_batal
             // 
@@ -327,10 +323,12 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownHeight = 100;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox2.IntegralHeight = false;
             this.comboBox2.Items.AddRange(new object[] {
             "1",
             "2",
@@ -365,7 +363,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
             this.comboBox2.TabIndex = 24;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button_simpan
             // 
@@ -403,14 +400,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(312, 120);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(760, 416);
@@ -465,8 +462,8 @@
             // 
             // textbox_id
             // 
-            this.textbox_id.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textbox_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbox_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textbox_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textbox_id.Cursor = System.Windows.Forms.Cursors.Default;
             this.textbox_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_id.Location = new System.Drawing.Point(168, 24);
@@ -576,9 +573,9 @@
             // 
             this.textbox_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_username.Location = new System.Drawing.Point(112, 24);
-            this.textbox_username.Multiline = true;
+            this.textbox_username.MaxLength = 12;
             this.textbox_username.Name = "textbox_username";
-            this.textbox_username.Size = new System.Drawing.Size(115, 20);
+            this.textbox_username.Size = new System.Drawing.Size(115, 22);
             this.textbox_username.TabIndex = 37;
             // 
             // label9
@@ -605,9 +602,9 @@
             // 
             this.textbox_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_pass.Location = new System.Drawing.Point(112, 48);
-            this.textbox_pass.Multiline = true;
+            this.textbox_pass.MaxLength = 12;
             this.textbox_pass.Name = "textbox_pass";
-            this.textbox_pass.Size = new System.Drawing.Size(115, 20);
+            this.textbox_pass.Size = new System.Drawing.Size(115, 22);
             this.textbox_pass.TabIndex = 38;
             // 
             // groupBox4

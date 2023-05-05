@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2023 at 05:53 AM
+-- Generation Time: May 05, 2023 at 05:24 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -37,6 +37,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
+('ada', 'ada'),
 ('admin', 'admin'),
 ('admin2', 'admin2'),
 ('jihan', 'jihan');
@@ -48,8 +49,8 @@ INSERT INTO `admin` (`USERNAME`, `PASSWORD`) VALUES
 --
 
 CREATE TABLE `identitas` (
-  `ID` int(3) NOT NULL,
-  `NIK` int(16) NOT NULL,
+  `ID` int(4) NOT NULL,
+  `NIK` int(17) NOT NULL,
   `NAMA` varchar(50) NOT NULL,
   `TANGGAL` datetime NOT NULL,
   `JUMLAH_JIWA` int(3) NOT NULL,
@@ -68,7 +69,8 @@ INSERT INTO `identitas` (`ID`, `NIK`, `NAMA`, `TANGGAL`, `JUMLAH_JIWA`, `KUALITA
 (12130, 90912876, 'Azrul', '2023-04-29 09:35:39', 6, 30000, 774000, 800000, 26000),
 (12131, 90912551, 'Jihan', '2023-04-03 09:36:11', 7, 25000, 752500, 800000, 47500),
 (12132, 90912550, 'Ayu Aria', '2023-04-04 10:27:48', 4, 15000, 120000, 500000, 380000),
-(12137, 90912550, 'Ayu Aria3', '2023-04-08 10:51:55', 1, 15000, 30000, 80000, 50000);
+(12137, 90912550, 'Ayu Aria3', '2023-04-08 10:51:55', 1, 15000, 30000, 80000, 50000),
+(12138, 12, 'ad', '2023-05-05 20:29:26', 1, 12000, 0, 60000, 60000);
 
 -- --------------------------------------------------------
 
@@ -116,7 +118,7 @@ ALTER TABLE `identitas`
 -- AUTO_INCREMENT for table `identitas`
 --
 ALTER TABLE `identitas`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12138;
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12139;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

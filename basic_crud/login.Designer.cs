@@ -51,7 +51,6 @@
             this.textbox_username.Location = new System.Drawing.Point(24, 88);
             this.textbox_username.MaxLength = 12;
             this.textbox_username.MinimumSize = new System.Drawing.Size(300, 31);
-            this.textbox_username.Multiline = true;
             this.textbox_username.Name = "textbox_username";
             this.textbox_username.Size = new System.Drawing.Size(300, 31);
             this.textbox_username.TabIndex = 0;
@@ -126,7 +125,6 @@
             this.textbox_passw.Location = new System.Drawing.Point(24, 152);
             this.textbox_passw.MaxLength = 12;
             this.textbox_passw.MinimumSize = new System.Drawing.Size(300, 31);
-            this.textbox_passw.Multiline = true;
             this.textbox_passw.Name = "textbox_passw";
             this.textbox_passw.PasswordChar = '●';
             this.textbox_passw.Size = new System.Drawing.Size(300, 31);

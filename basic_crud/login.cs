@@ -25,8 +25,8 @@ namespace basic_crud
 
         //localhost string
 
-        MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
-        //MySqlConnection koneksi = new MySqlConnection("Server=XXXaws.connect.psdb.cloud;Database=XXXmethanesulfonic;user=XXXuep7z49rj1s8hhw1dtoy;password=XXXpscale_pw_wr3Iuqd4NxhA0GY8tytpIMybSYsq10lcvscjx4lM2w6;SslMode=VerifyFull");
+        //MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
+        MySqlConnection koneksi = new MySqlConnection("server=aws.connect.psdb.cloud;database=methanesulfonic;user=49nl76qjpvolzudd29bi;password=pscale_pw_3Dx9biLlRbSvmgDgYD5yugZJFDY0l5ZV0vHoerEJX6O;SslMode=VerifyFull");
         private void login_Load(object sender, EventArgs e)
         {
            Font myfont = new Font("Microsoft Sans Serif", 15.0f);

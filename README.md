@@ -2,7 +2,7 @@
 Aplikasi ini adalah aplikasi CRUD berbasis C# yang dikembangkan menggunakan Visual Studio 2017 serta xampp dan SQL dengan menggunakan MySQL Connector Net 6.6.4. Aplikasi ini dibuat untuk tugas Ujian Tengah Semester semester 4 mata kuliah PBO dan Praktek PBO.
 
 # Petunjuk Pemakaikan
-- Aplikasi dapat diakses tanpa menggunakan xampp secara online dengan menjalankan file bernama basic_crud.exe pada folder Debug (basic_crud\bin\Debug).
+- Aplikasi dapat diakses tanpa menggunakan xampp secara online dengan menjalankan file bernama basic_crud.exe pada folder Debug (basic_crud\bin\Debug) dengan mendownload file .rar pada seksi "Release" terbaru.
 - Database offline dapat diakses dengan menggunakan file SQL yang disediakan dengan Connection String sebagai berikut:
 MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
 - Halaman admin dapat diakses menggunakan usename dan password (password dan username = admin) dan admin dapat menambahkan akun admin baru lainnya.

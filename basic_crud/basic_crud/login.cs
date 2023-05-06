@@ -25,7 +25,6 @@ namespace basic_crud
 
         //localhost string
 
-        // MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
         MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
         private void login_Load(object sender, EventArgs e)
         {
@@ -39,8 +38,6 @@ namespace basic_crud
         {
             try
             {
-                //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
-                MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
                 MySqlCommand cmd;
 
                 cmd = koneksi.CreateCommand();
@@ -86,6 +83,26 @@ namespace basic_crud
             z.ShowDialog();
             this.Close();
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Menampilkan Credits~!");
+                Credits v = new Credits();
+                v.ShowDialog();
+                
+                koneksi.Close();
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
+            }
+            finally
+            {
+                koneksi.Close();
+            }
         }
     }
 }

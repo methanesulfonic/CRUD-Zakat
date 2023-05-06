@@ -17,6 +17,7 @@ namespace basic_crud
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
+            //Application.Run(new Credits());
             Application.Run(new login());
             //Application.Run(new nonadmin());
 

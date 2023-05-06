@@ -14,15 +14,15 @@ using System.Globalization;
 
 namespace basic_crud
 {
-    public partial class nonadmin : Form
+    public partial class searchformadmin : Form
     {
-        public nonadmin()
+        public searchformadmin()
         {
             InitializeComponent();
         }
 
         MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
-       
+        
         public void caridataformat()
         {
             dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
@@ -47,7 +47,6 @@ namespace basic_crud
             textbox_nama.Text = "";
             textbox_nik.Text = "";
         }
-
         public void lihatData()
         {
             MySqlCommand cmd;
@@ -69,13 +68,14 @@ namespace basic_crud
             dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+
         }
 
         private void nonadmin_Load(object sender, EventArgs e)
         {
             lihatData();
             label_waktu.Text = DateTime.Now.ToString
-            ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
+           ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
             this.dateTimePicker2.Value = DateTime.Now;
         }
 
@@ -140,7 +140,7 @@ namespace basic_crud
         }
 
         private void button_carikolom_Click_1(object sender, EventArgs e)
-        { 
+        {
             try
             {
                 koneksi.Open();
@@ -197,27 +197,6 @@ namespace basic_crud
                 koneksi.Close();
             }
         }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_waktu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_backlogin_Click(object sender, EventArgs e)
         {
             try
@@ -240,14 +219,15 @@ namespace basic_crud
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button_back_input_Click(object sender, EventArgs e)
         {
             try
             {
-                MessageBox.Show("Menampilkan Credits~!");
-                Credits v = new Credits();
-                v.ShowDialog();
-
+                MessageBox.Show("Kembali ke Form Input");
+                Form1 z = new Form1();
+                this.Hide();
+                z.ShowDialog();
+                this.Close();
                 koneksi.Close();
             }
             catch (Exception c)
@@ -316,6 +296,6 @@ namespace basic_crud
             }
         }
     }
-    
+
 }
 

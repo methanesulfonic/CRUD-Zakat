@@ -21,32 +21,10 @@ namespace basic_crud
             InitializeComponent();
         }
 
-        MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
-       
-        public void caridataformat()
-        {
-            dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
-            dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
-            dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
-            dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
-
-            dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
-
-            dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-            dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-            dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-            dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-            MessageBox.Show("Data berhasil dicari.");
-        }
-
-        public void kosongkantext()
-        {
-            textbox_cari.Text = "";
-            textbox_id.Text = "";
-            textbox_jiwa.Text = "";
-            textbox_nama.Text = "";
-            textbox_nik.Text = "";
-        }
+        //Gunakan koneksi dibawah jika ingin memakai database offline
+        //MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
+        //Gunakan koneksi dibawah jika ingin memakai database online
+        MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=uep7z49rj1s8hhw1dtoy;password=pscale_pw_wr3Iuqd4NxhA0GY8tytpIMybSYsq10lcvscjx4lM2w6;SslMode=VerifyFull");
 
         public void lihatData()
         {
@@ -63,19 +41,18 @@ namespace basic_crud
             dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
             dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
 
-            dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
-
             dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+            
         }
 
         private void nonadmin_Load(object sender, EventArgs e)
         {
             lihatData();
             label_waktu.Text = DateTime.Now.ToString
-            ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
+           ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
             this.dateTimePicker2.Value = DateTime.Now;
         }
 
@@ -90,12 +67,24 @@ namespace basic_crud
                 cmd.Parameters.AddWithValue("@dari", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@ke", dateTimePicker2.Value);
 
+
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;
+
+                dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
+
+                dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
                 MessageBox.Show("Data berhasil dicari.");
-                caridataformat();
+
                 koneksi.Close();
             }
             catch (Exception c)
@@ -121,12 +110,23 @@ namespace basic_crud
                 cmd.Parameters.AddWithValue("@PEMBAYARAN", textbox_cari.Text);
                 cmd.Parameters.AddWithValue("@KEMBALIAN", textbox_cari.Text);
 
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                caridataformat();
-                kosongkantext();
+
+                dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
+
+                dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                MessageBox.Show("Data berhasil dicari.");
+
                 koneksi.Close();
             }
             catch (Exception c)
@@ -139,6 +139,17 @@ namespace basic_crud
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textbox_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
         private void button_carikolom_Click_1(object sender, EventArgs e)
         { 
             try
@@ -148,12 +159,25 @@ namespace basic_crud
                 cmd = koneksi.CreateCommand();
                 cmd.CommandText = "SELECT * FROM identitas WHERE ID LIKE '%" + textbox_id.Text + "%'";
                 cmd.Parameters.AddWithValue("@ID", textbox_id.Text);
+              
+
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                caridataformat();
-                kosongkantext();
+
+                dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
+
+                dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                MessageBox.Show("Data berhasil dicari.");
+
                 koneksi.Close();
             }
             catch (Exception c)
@@ -180,12 +204,27 @@ namespace basic_crud
                 cmd = koneksi.CreateCommand();
                 cmd.CommandText = "SELECT * FROM identitas WHERE NIK LIKE '%" + textbox_nik.Text + "%'";
                 cmd.Parameters.AddWithValue("@NIK", textbox_nik.Text);
+
+
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                caridataformat();
-                kosongkantext();
+
+                dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
+                dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
+
+                dataGridView1.Columns[3].DefaultCellStyle.Format = "dd-MM-yyyy";
+
+                dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
+                MessageBox.Show("Data berhasil dicari.");
+
                 koneksi.Close();
             }
             catch (Exception c)
@@ -238,82 +277,6 @@ namespace basic_crud
                 koneksi.Close();
             }
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                MessageBox.Show("Menampilkan Credits~!");
-                Credits v = new Credits();
-                v.ShowDialog();
-
-                koneksi.Close();
-            }
-            catch (Exception c)
-            {
-                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
-            }
-            finally
-            {
-                koneksi.Close();
-            }
-        }
-
-        private void button_cari_nama_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                koneksi.Open();
-                MySqlCommand cmd;
-                cmd = koneksi.CreateCommand();
-                cmd.CommandText = "SELECT * FROM identitas WHERE NAMA LIKE '%" + textbox_nama.Text + "%'";
-                cmd.Parameters.AddWithValue("@NAMA", textbox_nama.Text);
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                caridataformat();
-                kosongkantext();
-                koneksi.Close();
-            }
-            catch (Exception c)
-            {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
-            }
-            finally
-            {
-                koneksi.Close();
-            }
-        }
-
-        private void button_cari_jiwa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                koneksi.Open();
-                MySqlCommand cmd;
-                cmd = koneksi.CreateCommand();
-                cmd.CommandText = "SELECT * FROM identitas WHERE JUMLAH_JIWA LIKE '%" + textbox_jiwa.Text + "%'";
-                cmd.Parameters.AddWithValue("@JUMLAH_JIWA", textbox_jiwa.Text);
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0].DefaultView;
-                caridataformat();
-                kosongkantext();
-                koneksi.Close();
-            }
-            catch (Exception c)
-            {
-                MessageBox.Show("Upss, coba cek kembali. Ini errornya: " + c.Message, "Pesan Error");
-            }
-            finally
-            {
-                koneksi.Close();
-            }
         }
     }
     

@@ -22,13 +22,10 @@ namespace basic_crud
            InitializeComponent();
            // Application.Run(new login());
            // this.Close();
-
         }
         //Gunakan koneksi dibawah jika ingin memakai database offline
         MySqlConnection koneksi = new MySqlConnection("server=localhost;database=date_test;uid=root;pwd=;convert zero datetime=True");
-        //Gunakan koneksi dibawah jika ingin memakai database online
-        //MySqlConnection koneksi = new MySqlConnection("Server=aws.connect.psdb.cloud;Database=methanesulfonic;user=mjzb1csqsbkk4isr7uhs;password=pscale_pw_NYeVCf5ZoZUUSzDTmWEMelNem0CjgifkaW6zXrsnh8N;SslMode=VerifyFull");
-
+        
         public void lihatData()
         {
             MySqlCommand cmd;
@@ -44,6 +41,8 @@ namespace basic_crud
             dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
             dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
 
+            dataGridView1.Columns[3].DefaultCellStyle.Format = "HH:mm, dd-MM-yyyy";
+
             dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
             dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
@@ -55,12 +54,24 @@ namespace basic_crud
            // comboBox1.DisplayMember = "RP." + "jenis";
         }
 
+        public void kosongkantext()
+        {
+            textbox_id.Text = "";
+            textbox_nik.Text = "";
+            textbox_nama.Text = "";
+            textbox_uang.Text = "";
+            textbox_total.Text = "";
+            textbox_kembalian.Text = "";
+        }
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             lihatData();
             label_waktu.Text = DateTime.Now.ToString
             ("dddd, HH:mm, dd MMMM yyyy", new System.Globalization.CultureInfo("id-ID"));
-            this.dateTimePicker2.Value = DateTime.Now;
+            //this.dateTimePicker2.Value = DateTime.Now;
             Font myfont = new Font("Microsoft Sans Serif", 12.0f);
             textbox_id.Font = myfont;
             textbox_nik.Font = myfont;
@@ -70,17 +81,8 @@ namespace basic_crud
             textbox_kembalian.Font = myfont;
             comboBox1.Font = myfont;
             comboBox2.Font = myfont;
-
-        }
-
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(comboBox2.Text))
-                button_simpan.Enabled = false;
-            else
-                button_simpan.Enabled = true;
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
         }
 
         public void button_cek_Click(object sender, EventArgs e)
@@ -131,74 +133,69 @@ namespace basic_crud
             }
         }
 
-
-        private void textbox_jiwa_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void button_simpan_Click_1(object sender, EventArgs e)
         {
             try
             {
-                koneksi.Open();
-                MySqlCommand cmd;
-                cmd = koneksi.CreateCommand();
+                if (textbox_nik.Text != "" && textbox_nama.Text != "" &&  textbox_uang.Text != "") 
+                    {
+                    koneksi.Open();
+                    MySqlCommand cmd;
+                    cmd = koneksi.CreateCommand();
 
-                double total = 0;
-                if (comboBox1.SelectedIndex == 0)
-                {
-                    total = int.Parse(comboBox2.Text) * (12000 * 4.3);
+                    double total = 0;
+                    if (comboBox1.SelectedIndex == 0)
+                    {
+                        total = int.Parse(comboBox2.Text) * (12000 * 4.3);
+                    }
+                    if (comboBox1.SelectedIndex == 1)
+                    {
+                        total = int.Parse(comboBox2.Text) * (15000 * 4.3);
+                    }
+
+                    if (comboBox1.SelectedIndex == 2)
+                    {
+                        total = int.Parse(comboBox2.Text) * (20000 * 4.3);
+                    }
+
+                    if (comboBox1.SelectedIndex == 3)
+                    {
+                        total = int.Parse(comboBox2.Text) * (25000 * 4.3);
+                    }
+
+                    if (comboBox1.SelectedIndex == 4)
+                    {
+                        total = int.Parse(comboBox2.Text) * (30000 * 4.3);
+                    }
+
+                    if (comboBox1.SelectedIndex == 5)
+                    {
+                        total = int.Parse(comboBox2.Text) * (35000 * 4.3);
+                    }
+                    double nilai_kembalian = int.Parse(textbox_uang.Text) - total;
+
+                    cmd.CommandText = "insert into identitas (NIK, NAMA, JUMLAH_JIWA, KUALITAS, TOTAL, TANGGAL, PEMBAYARAN, KEMBALIAN) values (@NIK,@NAMA,@JUMLAH_JIWA,@KUALITAS,@TOTAL,@TANGGAL,@PEMBAYARAN,@KEMBALIAN)";
+                    cmd.Parameters.AddWithValue("@NIK", textbox_nik.Text);
+                    cmd.Parameters.AddWithValue("@NAMA", textbox_nama.Text);
+                    DateTime dateTimeVariable = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@TANGGAL", dateTimeVariable);
+                    cmd.Parameters.AddWithValue("@PEMBAYARAN", textbox_uang.Text);
+                    cmd.Parameters.AddWithValue("@JUMLAH_JIWA", comboBox2.Text);
+                    cmd.Parameters.AddWithValue("@KUALITAS", comboBox1.Text);
+                    cmd.Parameters.AddWithValue("@TOTAL", total);
+                    cmd.Parameters.AddWithValue("@KEMBALIAN", nilai_kembalian);
+
+                    MessageBox.Show("Data dengan NIK " + textbox_nik.Text + " berhasil disimpan");
+                    cmd.ExecuteNonQuery();
+                    kosongkantext();
+                    lihatData();
+                    koneksi.Close();
                 }
-                if (comboBox1.SelectedIndex == 1)
+                else
                 {
-                    total = int.Parse(comboBox2.Text) * (15000 * 4.3);
+                    MessageBox.Show("Textbox ada yang belum diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                if (comboBox1.SelectedIndex == 2)
-                {
-                    total = int.Parse(comboBox2.Text) * (20000 * 4.3);
-                }
-
-                if (comboBox1.SelectedIndex == 3)
-                {
-                    total = int.Parse(comboBox2.Text) * (25000 * 4.3);
-                }
-
-                if (comboBox1.SelectedIndex == 4)
-                {
-                    total = int.Parse(comboBox2.Text) * (30000 * 4.3);
-                }
-
-                if (comboBox1.SelectedIndex == 5)
-                {
-                    total = int.Parse(comboBox2.Text) * (35000 * 4.3);
-                }
-                double nilai_kembalian = int.Parse(textbox_uang.Text) - total;
-
-                cmd.CommandText = "insert into identitas (NIK, NAMA, JUMLAH_JIWA, KUALITAS, TOTAL, TANGGAL, PEMBAYARAN, KEMBALIAN) values (@NIK,@NAMA,@JUMLAH_JIWA,@KUALITAS,@TOTAL,@TANGGAL,@PEMBAYARAN,@KEMBALIAN)";
-                cmd.Parameters.AddWithValue("@NIK", textbox_nik.Text);
-                cmd.Parameters.AddWithValue("@NAMA", textbox_nama.Text);
-                DateTime dateTimeVariable = DateTime.Now;
-                cmd.Parameters.AddWithValue("@TANGGAL", dateTimeVariable);
-                cmd.Parameters.AddWithValue("@PEMBAYARAN", textbox_uang.Text);
-                cmd.Parameters.AddWithValue("@JUMLAH_JIWA", comboBox2.Text);
-                cmd.Parameters.AddWithValue("@KUALITAS", comboBox1.Text);
-                cmd.Parameters.AddWithValue("@TOTAL", total);
-                cmd.Parameters.AddWithValue("@KEMBALIAN", nilai_kembalian);
-
-                MessageBox.Show("Data dengan NIK " + textbox_nik.Text + " berhasil disimpan");
-                cmd.ExecuteNonQuery();
-                textbox_id.Text = "";
-                textbox_nik.Text = "";
-                textbox_nama.Text = "";
-                textbox_uang.Text = "";
-                textbox_total.Text = "0";
-                textbox_kembalian.Text = "0";
-                lihatData();
-                koneksi.Close();
 
             }
             catch (Exception c)
@@ -212,70 +209,9 @@ namespace basic_crud
 
         }
 
-        private void textbox_nik_TextChanged_1(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(textbox_nik.Text))
-                button_simpan.Enabled = false;
-            else
-                button_simpan.Enabled = true;
-        }
-
-        private void textbox_uang_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(textbox_nik.Text))
-                button_simpan.Enabled = false;
-            else
-                button_simpan.Enabled = true;
-        }    
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                koneksi.Open();
-                MySqlCommand cmd;
-                cmd = koneksi.CreateCommand();
-                cmd.CommandText = "SELECT distinct * FROM identitas WHERE tanggal BETWEEN @dari AND @ke;";
-                cmd.Parameters.AddWithValue("@dari", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@ke", dateTimePicker2.Value);
-                                
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0].DefaultView;
-
-                dataGridView1.Columns[7].DefaultCellStyle.Format = "c";
-                dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
-                dataGridView1.Columns[6].DefaultCellStyle.Format = "c";
-                dataGridView1.Columns[8].DefaultCellStyle.Format = "c";
-
-                dataGridView1.Columns[7].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-                dataGridView1.Columns[5].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-                dataGridView1.Columns[6].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-                dataGridView1.Columns[8].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("id-ID");
-                MessageBox.Show("Data berhasil dicari.");
-
-                koneksi.Close();
-            }
-            catch (Exception c)
-            {
-                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
-            }
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_batal_Click(object sender, EventArgs e)
         {
-            textbox_id.Text = "";
-            textbox_nik.Text = "";
-            textbox_nama.Text = "";
-            textbox_uang.Text = "";
-            textbox_total.Text = "";
-            textbox_kembalian.Text = "";
+            kosongkantext();
         }
 
         private void button_ubah_Click(object sender, EventArgs e)
@@ -283,7 +219,8 @@ namespace basic_crud
             try
             { 
             koneksi.Open();
-
+            
+             
             int total = 0;
             if (comboBox1.SelectedIndex == 0)
             {
@@ -310,14 +247,8 @@ namespace basic_crud
             cmd.Parameters.AddWithValue("@KEMBALIAN", nilai_kembalian);
             MessageBox.Show("Data dengan NIK " + textbox_nik.Text + " berhasil diperbaharui");
             cmd.ExecuteNonQuery();
-            textbox_id.Text = "";
-            textbox_nik.Text = "";
-            textbox_nama.Text = "";
-            textbox_uang.Text = "";
-            textbox_total.Text = "0";
-            textbox_kembalian.Text = "0";
+            kosongkantext();
             lihatData();
-
             koneksi.Close();
             }
             catch (Exception c)
@@ -360,14 +291,9 @@ namespace basic_crud
                 cmd.Parameters.AddWithValue("@KUALITAS", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@TOTAL", total);
                 cmd.Parameters.AddWithValue("@KEMBALIAN", nilai_kembalian);
-                MessageBox.Show("Data dengan NIK " + textbox_nik.Text + " berhasil dihapus");
+                MessageBox.Show("Data dengan NIK " + textbox_nik.Text + " dan ID " + textbox_id.Text + " berhasil dihapus." );
                 cmd.ExecuteNonQuery();
-                textbox_id.Text = "";
-                textbox_nik.Text = "";
-                textbox_nama.Text = "";
-                textbox_uang.Text = "";
-                textbox_total.Text = "0";
-                textbox_kembalian.Text = "0";
+                kosongkantext();
                 lihatData();
                 koneksi.Close();
             }
@@ -379,24 +305,6 @@ namespace basic_crud
             {
                 koneksi.Close();
             }
-        }
-
-        private void textbox_nama_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(textbox_nama.Text))
-                button_simpan.Enabled = false;
-            else
-                button_simpan.Enabled = true;
-
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(comboBox2.Text))
-                button_simpan.Enabled = false;
-            else
-                button_simpan.Enabled = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -429,8 +337,8 @@ namespace basic_crud
         {
             try
             {
-                MessageBox.Show("Menuju ke Form Non-Administrator");
-                nonadmin z = new nonadmin();
+                MessageBox.Show("Menuju ke Form Pencarian");
+                searchformadmin z = new searchformadmin();
                 this.Hide();
                 z.ShowDialog();
                 this.Close();
@@ -445,11 +353,6 @@ namespace basic_crud
             }
         }
 
-        private void button_backlogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_backlogin_Click_1(object sender, EventArgs e)
         {
             try
@@ -460,6 +363,40 @@ namespace basic_crud
                 x.ShowDialog();
                 this.Close();
                 koneksi.Close();
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show("Ups, Ada Kesalahan. \nIni Detail Errornya: \"" + c.Message + "\"", "Pesan Error");
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+        }
+        
+        private void button_buatadmin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textbox_username.Text != "" && textbox_pass.Text != "")
+                {
+                    koneksi.Open();
+                    MySqlCommand cmd;
+                    cmd = koneksi.CreateCommand();
+                    cmd.CommandText = "insert into admin (USERNAME, PASSWORD) values (@USERNAME, @PASSWORD)";
+                    cmd.Parameters.AddWithValue("@USERNAME", textbox_username.Text);
+                    cmd.Parameters.AddWithValue("@PASSWORD", textbox_pass.Text);
+                    MessageBox.Show("Data dengan Username " + textbox_username.Text + " berhasil disimpan");
+                    cmd.ExecuteNonQuery();
+                    textbox_username.Text = "";
+                    textbox_pass.Text = "";
+                    koneksi.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Textbox ada yang belum diisi.","Peringatan",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+
             }
             catch (Exception c)
             {

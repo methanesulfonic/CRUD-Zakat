@@ -2,8 +2,6 @@ C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\D
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.exe
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.pdb
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Data.dll
-C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Data.Entity.dll
-C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\bin\Debug\MySql.Web.dll
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Form1.resources
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Properties.Resources.resources
 C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.GenerateResource.Cache
@@ -33,4 +31,9 @@ C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\D
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\bin\Debug\basic_crud.application
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.exe.manifest
 C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.application
-C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csprojResolveAssemblyReference.cache
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.searchformadmin.resources
+C:\Users\junbo\documents\visual studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.Credits.resources
+C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.AssemblyReference.cache
+C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.SuggestedBindingRedirects.cache
+C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.CoreCompileInputs.cache
+C:\Users\junbo\Documents\Visual Studio 2017\Projects\basic_crud\basic_crud\obj\Debug\basic_crud.csproj.CopyComplete
